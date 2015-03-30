@@ -1,0 +1,3 @@
+class Event < ActiveRecord::Base
+   validation_presence_of :name
+end

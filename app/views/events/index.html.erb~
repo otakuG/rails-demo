@@ -1,0 +1,13 @@
+<ul>
+<% @events.each do |event| %>
+	<li>
+		<%= event.name %>
+	<%= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
+	<%= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
+	<%= link_to 'Delete', :controller => 'events', :action => 'destroy', :id => event %>
+	</li>
+<% end %>
+</ul>
+<%= link_to 'New Event', :controller => 'events', :action => 'new' %>
+
+
