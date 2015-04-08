@@ -11,7 +11,7 @@ class EventsController < ApplicationController
       @event = Event.new(event_params)
       @event.save
       
-      redirect_to :action => :index
+      redirect_to events_url
    end
 
    def show
@@ -26,14 +26,14 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
       @event.update(event_params)
 
-      redirect_to :action => :show, :id => @event
+      redirect_to event_url(@event)
    end
 
    def destroy
       @event = Event.find(params[:id])
       @event.destroy
 
-      redirect_to :action => :index
+      redirect_to events_url
    end
 
    private
