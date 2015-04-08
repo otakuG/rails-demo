@@ -1,13 +1,15 @@
 <ul>
 <% @events.each do |event| %>
 	<li>
-		<%= event.name %>
-	<%= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
+	<%= link_to event.name, event_path(event) %>
+	<%= link_to ' (XML)', event_path(event, :format => :xml) %>
+	<%= link_to ' (JSON)', event_path(event, :format => :json) %>
 	<%= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
 	<%= button_to 'Delete', event_path(event), :method => :delete %>
 	</li>
 <% end %>
 </ul>
 <%= link_to 'New Evenet', new_event_path %>
+<%= link_to "Atom feed", events_path(:format => :atom) %>
 
 
